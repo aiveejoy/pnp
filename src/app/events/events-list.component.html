@@ -1,0 +1,13 @@
+<!-- <h1>events-list works </h1> -->
+<div class ="container" *ngIf="isViewingList">
+    <div *ngFor = "let event of events" class="jumbotron pb-5">
+        <app-event-details [event]="event" (id)="gettingId($event)"></app-event-details>
+      
+    </div>
+  
+  </div>
+  <div class = "container" *ngIf="!isViewingList">
+<app-participants-list ></app-participants-list>
+  </div>
+  
+  
