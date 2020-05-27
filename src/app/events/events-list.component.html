@@ -1,13 +1,33 @@
-<!-- <h1>events-list works </h1> -->
-<div class ="container" *ngIf="isViewingList">
-    <div *ngFor = "let event of events" class="jumbotron pb-5">
+<button data-toggle="modal" data-target="#myModal" class="btn mr-3" id="addEventBtn" style="float:right; background-color: #00b3b3; color:white"
+    *ngIf="isViewingList">Add Event</button>
+<br>
+<br>
+<div class="container" *ngIf="isViewingList">
+    <div *ngFor="let event of events" class="jumbotron pb-5" style="border-top: orange solid 15px; border-bottom: #00cccc solid 15px">
         <app-event-details [event]="event" (id)="gettingId($event)"></app-event-details>
-      
+
     </div>
-  
-  </div>
-  <div class = "container" *ngIf="!isViewingList">
-<app-participants-list ></app-participants-list>
-  </div>
-  
-  
+
+</div>
+<div class="container" *ngIf="!isViewingList">
+    <app-participants-list [participants]="event.participants" (backEvent)="returnToTableView()" (addparticipantevent)="addNewParticipantEvent($event)"></app-participants-list>
+</div>
+
+<!-- The Modal -->
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-top: orange solid 15px; border-bottom: #00cccc solid 15px">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Event Form</h4>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <app-addevent (event)="addEvent($event)"></app-addevent>
+            </div>
+        </div>
+    </div>
+</div>

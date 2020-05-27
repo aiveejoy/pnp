@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -8,16 +8,15 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 })
 export class EventDetailsComponent implements OnInit {
 
-  @Input() event:any;
+  @Input() event: any;
   @Output() id = new EventEmitter
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  sendId(data:any){
+  sendId(data: any) {
     this.id.emit(data);
-    console.log(data);
   }
 
 }

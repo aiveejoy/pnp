@@ -1,0 +1,49 @@
+<form [formGroup]="eventForm" (ngSubmit)="submitForm(eventForm.value)" autocomplete="off">
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" id="eventname" placeholder="Event Name" formControlName="name" name="eventname">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Event Category" formControlName="category" name="eventcateg">
+        </div>
+    </div><br>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" id="eventspeak" placeholder="Event Speaker" formControlName="speaker"
+                name="eventspeak">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Event Emcee" formControlName="emcee" name="emcee">
+        </div>
+    </div><br>
+    <div class="form-row">
+        <div class="col">
+            <input type="date" class="form-control" id="date" placeholder="Date" formControlName="date" name="date">
+        </div>
+        <div class="col">
+            <input type="time" class="form-control" placeholder="Time" formControlName="time" name="time">
+        </div>
+    </div><br>
+    <div class="form-row">
+        <input type="string" class="form-control" placeholder="Duration" formControlName="duration" name="duration">
+    </div><br>
+    <div formGroupName="venue">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Address" formControlName="address" name="address">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Building" formControlName="building" name="building">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Room" formControlName="room" name="room">
+            </div>
+        </div>
+    </div><br>
+    <div class="form-row">
+        <input type="text" class="form-control" placeholder="Description" formControlName="description" name="description">
+    </div>
+    <br>
+    <button class="btn btn-success" style="float:right" data-toggle="modal" data-target="#myModal">Add Event</button>&nbsp;&nbsp;
+    <button class="btn btn-danger mr-2" style="float:right" data-dismiss="modal">Cancel</button>
+</form>

@@ -1,7 +1,6 @@
 <div class="container">
-  <h2>Basic Table</h2>
-  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
-  <table class="table">
+  <h2>Event Lists</h2>
+  <table class="table" style="border-top: orange solid 15px; border-bottom: #00cccc solid 15px">
     <thead>
       <tr>
         <th>Full Name</th>
@@ -9,24 +8,49 @@
         <th>Company</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let participant of participants">
       <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
+        <td>{{ participant.fullName }}</td>
+        <td>{{ participant.position }}</td>
+        <td>{{ participant.company }}</td>
       </tr>
     </tbody>
   </table>
+  <button class="btn" style="background-color: #009999; color:white" type="submit" (click)="returnToTable()">Back</button>&nbsp;
+  <button block class="btn" style="background-color: #008000; color:white" data-toggle="modal" data-target="#Modal">Add
+    Participant</button>
 </div>
 
+<!-- Modal -->
+<div id="Modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content" style="border-top: orange solid 15px; border-bottom: #00cccc solid 15px">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Participant</h4>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <form autocomplete="off" novalidate #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" [ngModel]="fullName" name="fullName" placeholder="Full Name..." class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text" [ngModel]="position" name="position" placeholder="Position..." class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" [ngModel]="company" name="company" placeholder="Company..." class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-success" type="submit" data-toggle="modal" data-target="#Modal">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pnpevents-c6da4": {
+      "hosting": {
+        "pnp": [
+          "pnpevents-c6da4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pnpevents-c6da4"
+  }
+}
