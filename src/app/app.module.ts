@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     EventDetailsComponent,
     ParticipantsListComponent,
     AddeventComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

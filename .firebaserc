@@ -3,12 +3,12 @@
     "pnpevents-c6da4": {
       "hosting": {
         "pnp": [
-          "pnpevents-c6da4"
+          "pnp-events-dd01a"
         ]
       }
     }
   },
   "projects": {
-    "default": "pnpevents-c6da4"
+    "default": "pnp-events-dd01a"
   }
 }

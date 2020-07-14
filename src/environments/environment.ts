@@ -4,15 +4,15 @@
 
 export const environment = {
   production: false,
-  firebaseConfig: {
-    apiKey: "AIzaSyDLp5sgoeqM_wA8Sn3QptJNJNSG7GfYQHA",
-    authDomain: "pnpevents-c6da4.firebaseapp.com",
-    databaseURL: "https://pnpevents-c6da4.firebaseio.com",
-    projectId: "pnpevents-c6da4",
-    storageBucket: "pnpevents-c6da4.appspot.com",
-    messagingSenderId: "667026220287",
-    appId: "1:667026220287:web:6d532a7967395f93e858ca",
-    measurementId: "G-N33BDXW8FC"
+  firebaseConfig : {
+    apiKey: "AIzaSyAhq0Cq-1aFzN_ISt8wCDWMKX2hhs5d-mw",
+    authDomain: "pnp-events-dd01a.firebaseapp.com",
+    databaseURL: "https://pnp-events-dd01a.firebaseio.com",
+    projectId: "pnp-events-dd01a",
+    storageBucket: "pnp-events-dd01a.appspot.com",
+    messagingSenderId: "189695967141",
+    appId: "1:189695967141:web:49b2715dea3d3c2efe324c",
+    measurementId: "G-0HT3D23KMM"
   }
 };
 

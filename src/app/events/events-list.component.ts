@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Event, Participant } from "../Services/data_models";
 import { Services } from "../Services/services";
 import { Subscription } from "rxjs";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,12 +17,26 @@ export class EventsListsComponent implements OnInit, OnDestroy {
   isViewingList = true;
   getEventSubcribe: Subscription
 
-  constructor(private eventService: Services) { }
+  constructor(private eventService: Services,
+    private router: Router) { }
 
   ngOnInit() {
     this.getEventSubcribe = this.eventService.getEvents().subscribe(res => {
       this.events = res
     })
+
+    this.eventService.currentUserAccount.subscribe(currentUser =>{
+      console.log(currentUser);
+    })
+  }
+
+  logout(){
+    this.eventService.updateCurrentUser({
+      username: '',
+      password: ''
+    })
+    console.log("naka logout ka dae :)");
+    this.router.navigate(['/login']);
   }
 
   ngOnDestroy() {
