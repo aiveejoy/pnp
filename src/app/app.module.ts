@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsListsComponent } from './events/events-list.component';
-import { EventDetailsComponent } from './event/event-details/event-details.component';
+import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { ParticipantsListComponent } from './participants-list/participants-list.component';
-import { AddeventComponent } from './addevent/addevent.component';
+import { AddeventComponent } from './events/addevent/addevent.component';
 import { Services } from './Services/services'
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';

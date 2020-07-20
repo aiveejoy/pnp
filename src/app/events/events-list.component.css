@@ -1,0 +1,13 @@
+.body-content{
+    font-size:25px;
+}
+
+.event-list{
+    padding: 15px;
+    margin: 5px;
+}
+
+#saNGfor{
+    border-top: rgb(238, 133, 238) solid 15px; 
+    border-bottom: #D291BC solid 15px;
+}

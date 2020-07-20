@@ -24,6 +24,7 @@ export class ParticipantsListComponent implements OnInit {
   }
   register(data) {
     console.log('you click the button', data);
+    this.participants.push(data);
     this.addparticipantevent.emit(data);
     this.fullName = '';
     this.position = '';

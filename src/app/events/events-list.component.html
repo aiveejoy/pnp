@@ -1,12 +1,21 @@
-<button class="btn btn-success" type="submit" (click)="logout()">Logout</button>
+<button class="btn btn-success" type="submit" (click)="logout()" style="float: right;">Logout</button>
 <button data-toggle="modal" data-target="#myModal" class="btn mr-3" id="addEventBtn" style="float:right; background-color: #EAB0D9; color:white"
     *ngIf="isViewingList">Add Event</button>
 <br>
 <br>
 <div class="container" *ngIf="isViewingList">
-    <div *ngFor="let event of events" class="jumbotron pb-5" style="border-top: rgb(238, 133, 238) solid 15px; border-bottom: #D291BC solid 15px">
-        <app-event-details [event]="event" (id)="gettingId($event)"></app-event-details>
-
+    <div *ngFor="let event of events" id = "saNGfor">
+        <!-- <app-event-details [event]="event" (id)="gettingId($event)"></app-event-details> -->
+        <div class="jumbotron col-sm-12 events-list">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>{{event.name}}</h2>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-primary" style="float: right;" (click)="viewEvent(event)">View Event Details</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="container" *ngIf="!isViewingList">

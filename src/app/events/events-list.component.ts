@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-events-list',
   templateUrl: './events-list.component.html',
-  styles: ['.body-content{font-size:25px;}']
+  styleUrls: ['./events-list.component.css']
+ 
 })
 
 export class EventsListsComponent implements OnInit, OnDestroy {
@@ -28,6 +29,11 @@ export class EventsListsComponent implements OnInit, OnDestroy {
     this.eventService.currentUserAccount.subscribe(currentUser =>{
       console.log(currentUser);
     })
+  }
+
+  viewEvent(event: Event){
+    console.log(event)
+    this.router.navigate(['/events',event.id]);
   }
 
   logout(){

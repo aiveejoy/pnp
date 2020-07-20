@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Query } from '@angular/core';
 import { Event, UserAccount } from '../Services/data_models';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, BehaviorSubject } from "rxjs";
@@ -13,7 +13,7 @@ export class Services {
   private eventCollection: AngularFirestoreCollection<Event>
   fEvent: Observable<Event[]>
 
-  private userAccount= new BehaviorSubject<UserAccount>({username: '', password: ''});
+  userAccount= new BehaviorSubject<UserAccount>({username: '', password: ''});
   currentUserAccount = this.userAccount.asObservable();
 
   constructor(private angular: AngularFirestore) {
@@ -29,6 +29,18 @@ export class Services {
 
   getEvents() {
     return this.events;
+  }
+
+  async getEvent(id: number): Promise<Event>{
+    let event:Event
+    await this.eventCollection.ref.where('id', '==', Number(id))
+    .get().then(querySnapshot => {
+      querySnapshot.forEach(doc =>{
+        event= doc.data() as Event;
+      })
+    });
+    return event;
+
   }
 
   updateEvent(event: Event) {
